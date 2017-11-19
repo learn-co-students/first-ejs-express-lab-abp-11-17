@@ -20,3 +20,5 @@ To start your application, type `npm start`. The IDE will give you an IP address
 In `app.js`, define a route for the root of the application at `/`. In the callback for that route, you will be rendering a template inside the `views` directory called `index.ejs` using `resp.render()`.
 
 Your route callback should also pass a javascript object to the view with a key `welcomePhrase` that has a value of `Hello, World from Express and EJS!`.
+
+Finally, make sure you use embedded EJS with `<%= %>` to write the value of `welcomePhrase` into the HTML. Add an `<h2>` below the `<h1>` and write the contents of the variable as the text of the `<h2>`
