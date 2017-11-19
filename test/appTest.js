@@ -7,6 +7,8 @@ const chai = require('chai')
 
 const chaiHttp = require('chai-http');
 const app = require('../server');
+const sinon = require('sinon');
+const ejs = require('ejs');
 
 chai.use(chaiHttp);
 
@@ -21,11 +23,17 @@ describe("app.js", function(){
         });
     });    
 
-    it('sends "Hello, World!" as the response', function(done){
+    it('renders the index.ejs view', function(done){
+      const spy = sinon.spy(ejs, '__express');
+      
+      
       chai.request(app)
         .get("/")
         .end(function(err, res){
-          expect(res.text).to.equal('Hello, World!');
+          console.log(res)
+          expect(spy.calledWithMatch(/index/)).to.be.true;
+          spy.restore();
+
           done();
         });
     });
