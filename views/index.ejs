@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>This is EJS</title>
+  </head>
+  <body>
+    <h1><%= welcomeText %></h1>
+    <h2>The time is: <%= new Date() %></h2>
+    <h3><%= name %></h3>
+    <h4>Here comes a list of oclors:</h4>
+    <ul>
+      <% colors.forEach(function(color){ %>
+        <li><%= color %></li>
+      <% }) %>
+      <% favoriteThings.forEach(function(thing){%>
+      <p><%= favoriteThings %></p>
+    <% }) %>
+
+</ul>
