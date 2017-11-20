@@ -4,7 +4,8 @@ var app = express()
 // Build Your Route Here
 app.get("/",function(req, resp){
   resp.render("index.ejs" ,{
-    data:"passing this data"
+    data:"passing this data",
+    hello: "Hello, World!"
   })
 })
 
