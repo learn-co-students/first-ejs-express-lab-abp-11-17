@@ -5,7 +5,11 @@
   </head>
   <body>
     <h1>My First EJS Lab</h1>
-
-    
+    <h2>welcomePhrase</h2>
+    <ul>
+      <% welcomePhrase.forEach(function(thing){ %>
+        <li><%= 'Hello, World from Express and EJS!' %></li>
+      <% }) %>
+    </ul>
   </body>
 </html>
